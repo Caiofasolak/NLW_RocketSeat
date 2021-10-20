@@ -11,7 +11,9 @@ class GetLast3MessagesService{
         user: true,
       },
     });
+    return messages;
   }
+
 }
 
 export {GetLast3MessagesService}
