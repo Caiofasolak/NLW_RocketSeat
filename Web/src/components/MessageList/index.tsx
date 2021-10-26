@@ -41,32 +41,19 @@ export function MessageList(){
       </svg>
 
       <ul className={styles.messageList}>
-        <li className={styles.message}>
-          <p className={styles.messageContent}>Vai começar o DoWhile!!</p>
-          <div className={styles.messageUser}>
-            <div className={styles.messageImage}>
-              <img src='https://github.com/Caiofasolak.png' alt="Caio Fasolak" />
+        {messages.map(message =>{
+        return(
+          <li key ={message.id} className={styles.message}>
+            <p className={styles.messageContent}>{message.text}</p>
+            <div className={styles.messageUser}>
+              <div className={styles.messageImage}>
+                <img src={message.user.avatar_url} alt={message.user.name} />
+              </div>
+              <span>{message.user.name}</span>
             </div>
-          </div>
-        </li>
-
-        <li className={styles.message}>
-          <p className={styles.messageContent}>Vai começar o DoWhile!!</p>
-          <div className={styles.messageUser}>
-            <div className={styles.messageImage}>
-              <img src='https://github.com/Caiofasolak.png' alt="Caio Fasolak" />
-            </div>
-          </div>
-        </li>
-
-        <li className={styles.message}>
-          <p className={styles.messageContent}>Vai começar o DoWhile!!</p>
-          <div className={styles.messageUser}>
-            <div className={styles.messageImage}>
-              <img src='https://github.com/Caiofasolak.png' alt="Caio Fasolak" />
-            </div>
-          </div>
-        </li>
+          </li>
+        );
+      })}
       </ul>
 
     </div>
